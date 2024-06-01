@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fake News Detector</title>
+  
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <h1 class="special-elite-regular">Fact Proof</h1>
+    <nav class="nav" id="home">
+      <li><a href="#">HOME</a></li>
+      <li><a href="#about-us">ABOUT US</a></li>
+      <li><a href="#team">TEAM</a></li>
+      <li><a href="#contact">CONTACT</a></li>
+    </nav>
+  </header>
+  <div class="container">
+    <div class="search_bg">
+      <div class="form-container">
+        <button onclick="switchForms()" id="switch_button" class="form-switch-button">Link</button>
+
+      <form class="search_form" id="first_form" action="{{ url_for('predict_text') }}" method="POST" >
+        <div class="search-bar">
+          <input type="hidden" name="formid" value="1">
+          <h2 class="title_text">Title</h2>
+          <input type="text" name="title" class="search-input" placeholder="Enter your title" required>
+        </div>
+        <div class="search-bar">
+          <h2 class="title_text">Article</h2>
+          <input type="text" name="article" class="search-input" placeholder="Enter your article" required>
+        </div>
+        <input type="submit" class="submit_button" value="Submit">
+        <div class="predict">
+          {{prediction_text}}
+          {{sentiment_text}}
+        </div>
+      </form>
+      <form class="search_form" id="second_form" action="{{ url_for('predict_text') }}" method="POST" style="display: none;">
+        <div class="search-bar">
+          <input type="hidden" name="formid" value="2">
+          <h2 class="title_text">Link</h2>
+          <input type="text" name="link" class="search-input" placeholder="Paste your link here" required>
+        </div>
+        <input type="submit" class="submit_button" value="Submit">
+        <div class="predict">
+          {{prediction_text}}
+          {{sentiment_text}}
+        </div>
+      </form>
+      </div>
+      
+    </div>
+
+    <div class="columns">
+      <h2 class="Trending">Trending News</h2>  
+      <div class="news-container"></div>
+      <script src="{{ url_for('static', filename='js/news.js') }}"></script>
+    </div>
+  </div>
+
+  <section id="about-us">    
+    <h2>Empowering Informed Decisions</h2>
+    <p>We use advanced Machine Learning to combat fake news. Our project empowers you to make informed decisions online. Join the fight for truth!</p>
+    <p>This project is a collaborative effort by a team of three, developed under the guidance of Mr. Abhishek Ray. We've leveraged Machine Learning to create a tool that helps users identify reliable information online, combating the spread of misinformation.</p>
+  </section>
+
+  <section id="team">
+    <h2>Our Team</h2>
+    <div class="team-members">
+      <div class="member-card">
+        <img src="{{ url_for('static', filename='assets/images/smriti.jpg') }}" alt="smriti">
+        <div class="member-info">
+          <h3>Smriti Sinha</h3>
+        </div>
+      </div>
+      <div class="member-card">
+        <img src="{{ url_for('static', filename='assets/images/sonali.jpg') }}" alt="sonali">
+        <div class="member-info">
+          <h3>Sunali Patro</h3>
+        </div>
+      </div>
+      <div class="member-card">
+        <img src="{{ url_for('static', filename='assets/images/jyoti.jpg') }}" alt="jyoti">
+        <div class="member-info">
+          <h3>Jyoti Kumari</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <div class="form_bg" id="contact">
+    <h2 class="contacthead">Contact Us</h2>
+    <section id="contact-us">
+      <div class="contact-info">
+        <p class="phone phone1">Phone: (555) 555-5555</p>
+        <p class="phone">Email: factproof@gmail.com</p>
+        <p class="phone">Address: Campus 6, KIIT, Patia, Bhubneshwar</p>
+      </div>
+      <div class="contact-form">
+        <h3 class="formhead">Get in Touch</h3>
+        <form id="myForm">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          <input type="submit" class="button" value="Submit"></input>
+        </form>
+      </div>
+    </section>
+  </div>
+    
+  <footer class="footer">
+    <div class="social-icons">
+      <a href="https://www.instagram.com"><img src="{{ url_for('static', filename='assets/images/instagram.png') }}" alt="Instagram"></a>
+      <a href="https://www.facebook.com"><img src="{{ url_for('static', filename='assets/images/facebook.png') }}" alt="Facebook"></a>
+      <a href="https://www.linkedin.com"><img src="{{ url_for('static', filename='assets/images/linkedin.png') }}" alt="LinkedIn"></a>
+    </div>
+    <p>&copy; Fact Proof, 2024 . All Rights Reserved</p>
+    <div class="contact">
+    </div>
+</footer>
+
+<script>
+  function switchForms() {
+    var firstForm = document.getElementById("first_form");
+    var secondForm = document.getElementById("second_form");
+    var switchButton = document.getElementById("switch_button");
+    
+    if (firstForm.style.display === "none") {
+      firstForm.style.display = "block";
+      secondForm.style.display = "none";
+      switchButton.textContent = "Link"; // Change button text to "Link"
+    } else {
+      firstForm.style.display = "none";
+      secondForm.style.display = "block";
+      switchButton.textContent = "Text"; // Change button text to "Text"
+    }
+  }
+</script>
+
+</body>
+</html>

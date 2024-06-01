@@ -1,0 +1,69 @@
+body {
+    font-family: serif;
+    /* background-color: #9b92a4; */
+    background-color: #e5dbf0;
+    margin: 0;
+    padding: 0;
+  }
+  .special-elite-regular {
+    font-family: "Special Elite", system-ui;
+    font-weight: 800;
+    font-style: normal;
+  }  
+
+.header {
+    height: 10vh;
+    /* background-color: #7aa19b; */
+    background-color: rgb(51, 51, 51);
+    color: black;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header h1 {
+    margin: 0;
+    color: white;
+    font-size: 7vh;
+  }
+
+  .nav {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+  .nav li {
+    margin-right: 3rem;
+  }
+  .nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 3.5vh;
+
+  }
+
+  .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 3vh;
+
+    background: rgba(43, 42, 42, 0.7)url("../assets/images/building_pic.jpg");
+    background-blend-mode: darken;
+    width: 100vw;
+    height: 85vh;
+    background-size: auto;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 6vh;
+  }
+  .prediction_text , .sentiment_text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

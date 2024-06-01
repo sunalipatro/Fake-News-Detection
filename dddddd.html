@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fake News Detector</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <header class="header">
+    <h1 class="special-elite-regular">Fact Proof</h1>
+    <nav class="nav" id="home">
+      <li><a href="#">HOME</a></li>
+      <li><a href="#about-us">ABOUT US</a></li>
+      <li><a href="#team">TEAM</a></li>
+      <li><a href="#contact">CONTACT</a></li>
+    </nav>
+  </header>
+  <div class="container">
+    <div class="search_bg">
+      <form class="search_form">
+      <div class="search-bar">
+        <h2 class="title_text">Title</h2>
+        <input type="text" class="search-input" placeholder="Enter your title">
+        <!-- <img src="./search_icon.png"/> -->
+      </div>
+      <div class="search-bar">
+          <h2 class="title_text">Article</h2>
+          <input type="text" class="search-input" placeholder="Enter your article">
+          <!-- <img src="./search_icon.png"/> -->
+        </div>
+          <input type="submit" class="submit_button" value="Submit">
+      </form>
+      </div>
+
+    <diV class="columns">
+    <div class="column">    
+      <h2 class="Trending">Trending News</h2>  <div class="news-container"></div> </div>
+      <script src="news.js"></script>
+      <!-- <h2>Popular Articles</h2>
+      <div class="article">
+        <p>A short description of the article.</p>
+      </div>
+      <div class="article">
+        <p>A short description of the article.</p>
+      </div>
+      <div class="article">
+        <p>A short description of the article.</p>
+      </div>
+      <div class="article">
+        <p>A short description of the article.</p>
+      </div>
+      <div class="article">
+        <p>A short description of the article.</p>-->
+      </div>
+    <div class="column">
+      <h2 class="Trending">Recent Search</h2>
+      <div class="article">
+        <p>Search Item 1</p>
+      </div>
+      <div class="article">
+        <p>Search Item 2</p>
+      </div>
+      <div class="article">
+        <p>Search Item 3</p>
+      </div>
+      <div class="article">
+        <p>Search Item 4</p>
+      </div>
+      <div class="article">
+        <p>Search Item 5</p>
+      </div>
+    </div>
+  </diV>
+</div>
+
+  <section id="about-us">
+    <h2>Empowering Informed Decisions</h2>
+    <p>We use advanced Machine Learning to combat fake news. Our project empowers you to make informed decisions online.<br>Join the fight for truth!</p>
+    <p>This project is a collaborative effort by a team of five, developed under the guidance of Mr. Abhishek Ray. We've leveraged Machine Learning to create a tool that helps users identify reliable information online, combating the spread of misinformation.</p>
+  </section>
+
+  <section id="team">
+    <h2>Our Team</h2>
+    <div class="team-members">
+      <div class="member-card">
+        <img src="../assets/smriti.jpg" alt="Person 1">
+        <div class="member-info">
+          <h3>Smriti Sinha</h3>
+        </div>
+      </div>
+      <div class="member-card">
+        <img src="../assets/jyoti.jpg" alt="Person 2">
+        <div class="member-info">
+          <h3>Jyoti Kumari</h3>
+        </div>
+      </div>
+      <div class="member-card">
+        <img src="../assets/sonali.jpg" alt="Person 3">
+        <div class="member-info">
+          <h3>Sunali Patro</h3>
+        </div>
+      </div>
+      <div class="member-card">
+        <img src="../assets/shrishti.jpg" alt="Person 4">
+        <div class="member-info">
+          <h3>Shrishti Singh</h3>
+        </div>
+      </div>
+      <div class="member-card">
+        <img src="../assets/hritik.jpg" alt="Person 5">
+        <div class="member-info">
+          <h3>Hritik Raj</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <div class="form_bg" id="contact">
+    <h2 class="contacthead">Contact Us</h2>
+    <section id="contact-us">
+      <div class="contact-info">
+        <p class="phone phone1">Phone: (555) 555-5555</p>
+        <p class="phone">Email: factproof@gmail.com</p>
+        <p class="phone">Address: Campus 6, KIIT, Patia, Bhubneshwar</p>
+      </div>
+      <div class="contact-form">
+        <h3 class="formhead">Get in Touch</h3>
+        <form id="myForm">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          <input type="submit" class="button" value="Submit"></input>
+        </form>
+      </div>
+    </section>
+  </div>
+    
+  <footer class="footer">
+    <div class="social-icons">
+        <a href="https://www.instagram.com"><img src="../assets/instagram.png" alt="Instagram"></a>
+        <a href="https://www.facebook.com"><img src="../assets/facebook.png" alt="Facebook"></a>
+        <!-- <a href="https://www.whatsapp.com"><img src="./whatsapp.png" alt="Facebook"></a> -->
+        <a href="https://www.linkedin.com"><img src="../assets/linkedin.png" alt="LinkedIn"></a>
+      </div>
+      <p>&copy; Fact Proof, 2024 . All Rights Reserved</p>
+    <div class="contact">
+    </div>
+</footer>
+</body>
+</html>
