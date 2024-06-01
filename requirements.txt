@@ -1,9 +1,10 @@
 Flask
-sklearn
+scikit-learn
 pandas
 numpy
 matplotlib
 tensorflow==2.15
 keras==2.15
-pickle
+# pickle
 nltk
+Gunicorn

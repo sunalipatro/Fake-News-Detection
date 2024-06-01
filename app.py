@@ -68,5 +68,5 @@ def predict_next():
     article = session.get("article","No article added")
     return render_template("predict.html", prediction_text="Given article is {}".format(prediction_text),sentiment_text="After performing the sentiment analysis, we found the article to be {}".format(sentiment_text))
 
-if __name__ == "__main__":
-    app.run(debug=False,host="0.0.0.0")
+# if __name__ == "__main__":
+#     app.run(debug=False,host="0.0.0.0")
