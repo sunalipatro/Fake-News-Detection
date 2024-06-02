@@ -5,8 +5,11 @@ numpy
 matplotlib
 tensorflow==2.15
 keras==2.15
-# pickle
+# pickle5
 nltk
+BeautifulSoup
+parse
+requests
 apscheduler
 schedule
 Gunicorn
